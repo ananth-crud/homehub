@@ -1,0 +1,38 @@
+.tribox-container {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 6em 2em;
+  .tri-panel {
+    display: inline-block;
+    max-height: 500px;
+    position: relative;
+    margin: 0 1em;
+    border-radius: 1em;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    .headBackground {
+      width: 100%;
+      height: 200px;
+      clip-path: ellipse(63% 85% at 50% 5%);
+    }
+    .circle-image {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      position: absolute;
+      top: -15%;
+      left: 35%;
+    }
+    .content {
+      margin: 1em;
+    }
+    .link-container {
+      display: flex;
+      margin: 1rem;
+      .linkMessage {
+        align-self: center;
+      }
+    }
+  }
+}
+

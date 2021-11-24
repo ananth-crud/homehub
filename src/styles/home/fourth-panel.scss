@@ -1,0 +1,35 @@
+.fourthpanel-container {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 2em;
+
+  .tri-panel {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .tri-panel-2 {
+    flex-direction: column;
+    .content {
+      margin: 2em;
+
+    }
+  }
+
+  .mobileSubImage {
+    margin-top: 10em;
+    width: 169px;
+    height: 151px;
+  }
+  .tri-panel-3 {
+    height: max-content;
+    .circledMobileImage {
+      width: 520px;
+      height: 706px;
+    }
+  }
+  
+}
+

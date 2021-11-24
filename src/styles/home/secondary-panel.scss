@@ -1,0 +1,39 @@
+.secondary-panel {
+  display: flex;
+  justify-content: space-between;
+  height: max-content;
+  
+  .tri-panel {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .tri-panel-1 {
+    height: max-content;
+    .main-image {
+      width: 595px;
+      height: 634px;
+    }
+  }
+
+  .tri-panel-2 {
+    flex-direction: column;
+    width: 352px;  
+    .tri-panel-title {
+      display: flex;
+      .sub-title {
+        align-self: flex-end;
+      }
+    }
+    .content {
+      margin-top: 1em;
+    }
+  }
+  
+  .subImages {
+    flex-direction: row;
+  }
+}
+
