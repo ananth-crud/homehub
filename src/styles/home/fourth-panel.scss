@@ -5,6 +5,11 @@
   justify-content: space-between;
   margin-left: 2em;
 
+  @include xs {
+    display: flex;
+    flex-direction: column;
+  }
+
   .tri-panel {
     height: 100vh;
     display: flex;
@@ -12,11 +17,16 @@
     align-items: center;
   }
 
+  .title {
+    @include xs {
+      height: auto;
+    }
+  }
+
   .tri-panel-2 {
     flex-direction: column;
     .content {
       margin: 2em;
-
     }
   }
 
@@ -30,6 +40,10 @@
     .circledMobileImage {
       width: 520px;
       height: 706px;
+    }
+
+    @include xs {
+      height: 361px;
     }
   }
   

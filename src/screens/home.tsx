@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FourthPanel } from "../components/home/fourth_panel";
 import { HeaderPanel } from "../components/home/header_panel";
 import { ProductSlider } from "../components/home/product_slider";
@@ -10,16 +10,46 @@ import { IProductSlider, ISlider } from "../interface/home/IProductSlider";
 import { ISecondaryPanel } from "../interface/home/ISecondaryPanel";
 import { ITop } from "../interface/home/ITop";
 import { ITriboxPanel } from "../interface/home/ITriboxPanel";
+import { FourthPanelMobile } from "../mobile/components/home/fourth_panel_mobile";
 import { GeneralTop } from "../services/new-top-service";
 export const Home: React.FC = () => {
   const { state, isLoading } = GeneralTop<ITop>();
+  const [device, setDevice] = useState('');
+  
+  useEffect(() => {
+    function handleResize() {
+      if (window.innerWidth < 500) {
+        setDevice('Mobile');
+      } else if (window.innerWidth < 1200) {
+        setDevice('PC');
+      } else {
+        setDevice('Large');
+      }
+    }
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+
+  }, [])
   return (
-    <>
-      <HeaderPanel {...constructHeaderPanelObject(state)} />
-      <SecondaryPanel {...constructSecondaryPanelObject(state)} />
-      <ProductSlider {...constructSliderArray(state)} />
-      <FourthPanel {...constructFourthPanelObject(state)} />
-      <TriBoxPanel {...constructTriboxPanelObject(state)} />
+    <> {device}
+      { device === 'PC' ? 
+      <>
+        <HeaderPanel {...constructHeaderPanelObject(state)} />
+        <SecondaryPanel {...constructSecondaryPanelObject(state)} />
+        <ProductSlider {...constructSliderArray(state)} />
+        <FourthPanel {...constructFourthPanelObject(state)} />
+        <TriBoxPanel {...constructTriboxPanelObject(state)} /> 
+      </>: 
+        <>
+          <HeaderPanel {...constructHeaderPanelObject(state)} />
+          <SecondaryPanel {...constructSecondaryPanelObject(state)} />
+          <ProductSlider {...constructSliderArray(state)} />
+          <FourthPanelMobile {...constructFourthPanelObject(state)} />
+          <TriBoxPanel {...constructTriboxPanelObject(state)} /> 
+        </>
+      }
+      
     </>
   );
 };
