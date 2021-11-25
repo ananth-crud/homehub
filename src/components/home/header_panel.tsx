@@ -11,8 +11,15 @@ export const HeaderPanel: React.FC<IHeaderPanel | null> = (props) => {
             src={props.headimage?.url}
             alt={props.headimage?.alt}
           />
-          <div className="text-center headTitleSmall">{props.headTitleSmall}</div>
-          <div className="text-center headTitleBig">{props.headTitleBig}</div>
+          <div className='title-section'>
+            <div className="text-center headTitleSmall">{props.headTitleSmall}</div>
+            <div className="text-center headTitleBig">{props.headTitleBig}</div>
+          </div>
+          <img
+            className="product-img"
+            src={props.headProductImage?.url}
+            alt={props.headProductImage?.alt}
+          />
         </div>
       </>
     );

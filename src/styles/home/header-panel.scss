@@ -1,23 +1,28 @@
 @import '../media-queries.scss';
 
 .header-panel {
+  height: 650px;
   .main-img {
     width: 100%;
     position: relative;
     text-align: center;
     height: 500px;
+    @include md {
+      clip-path: ellipse(55% 85% at 50% 5%);
+    }
   }
   .title-section {
-    position: absolute;
-    top: 270px;
-    @include xs {
-      width: 360px;
-      height: 114px;
-    }
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    @include xs {
+      width: 360px;
+      height: 114px;
+      top: 270px;
+      position: absolute;
+    }
+    
     .text-center {
       color: white;
       position: absolute;
@@ -53,10 +58,17 @@
     }
   }
   .product-img {
-    width: 100%;
-    position: absolute;
-    left: 0;
-    top: 350px;
+    @include xs {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: 350px;
+    } 
+    @include md {
+      top: 63%;
+      left: 30%;
+      position: absolute;
+    }
   }
   
 }
