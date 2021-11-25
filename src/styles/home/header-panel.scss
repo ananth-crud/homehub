@@ -1,7 +1,12 @@
 @import '../media-queries.scss';
 
 .header-panel {
-  height: 650px;
+  @include md {
+    height: 650px;
+  }
+  @include xs {
+    height: 550px;
+  }
   .main-img {
     width: 100%;
     position: relative;
