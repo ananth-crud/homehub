@@ -1,29 +1,62 @@
 @import '../media-queries.scss';
 
-.main-img {
-  width: 100%;
-  position: relative;
-  text-align: center;
-}
-
 .header-panel {
-  .text-center {
-    color: white;
+  .main-img {
+    width: 100%;
+    position: relative;
+    text-align: center;
+    height: 500px;
+  }
+  .title-section {
     position: absolute;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-family: "Noto Sans JP";
-    font-weight: 500;
-    font-size: 48px;
-    backdrop-filter: blur(4px);
-    text-shadow: 4px 4px 20px rgba(21, 21, 21, 0.25);
+    top: 270px;
+    @include xs {
+      width: 360px;
+      height: 114px;
+    }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .text-center {
+      color: white;
+      position: absolute;
+      font-family: "Noto Sans JP";
+      font-weight: 500;
+      font-size: 48px;
+      // backdrop-filter: blur(4px);
+      text-shadow: 4px 4px 20px rgba(21, 21, 21, 0.25);
+      @include xs {
+        font-size: 28px;
+        font-weight: bold;
+        font-style: normal;
+      }
+    }
+    .headTitleSmall {
+      @include md {
+        top: 35%;
+      }
+      @include xs {
+        top: -2em;
+      }
+    }
+    .headTitleBig {
+      font-size: 52px;
+      font-weight: 1200;
+      @include md {
+        top: 45%;
+      }
+      @include xs {
+        top: 5%;
+        font-size:40px;
+      }
+    }
   }
-  .headTitleSmall {
-    top: 35%;
+  .product-img {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 350px;
   }
-  .headTitleBig {
-    top: 45%;
-    font-size: 52px;
-    font-weight: 800;
-  }
+  
 }
