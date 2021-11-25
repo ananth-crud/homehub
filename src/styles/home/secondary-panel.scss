@@ -5,26 +5,71 @@
   justify-content: space-between;
   height: max-content;
   margin-right: 3em;
+
+  @include xs {
+    display: flex;
+    flex-direction: column;
+  }
+
   .tri-panel {
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @include md {
+      height: 100vh;
+    }
   }
 
-  .tri-panel-1 {
+  .mainImage-section {
     height: max-content;
     .main-image {
       width: 595px;
       height: 634px;
+
+      @include xs {
+        margin-top: 2em;
+        width: 366px;
+        height: 366px;
+      }
     }
   }
 
-  .tri-panel-2 {
+  .content-section {
+    display: flex;
+    justify-content: center;
+    backdrop-filter: blur(25px);
+    height: 264px;
+    width: 360px;
+    margin-top: -3em;
+    .content {
+      height: 216px;
+      width: 208px;
+      line-height: 2em;
+    }
+    .subImage-section {
+      height: 150px;
+      .subImages {
+        flex-direction: column;
+        margin-top: 2em;
+        img {
+          height: 70px;
+        }
+      }
+    }
+  }
+
+  .title-section {
     flex-direction: column;
     width: 352px;  
     .tri-panel-title {
       display: flex;
+      img {
+        @include xs {
+          width: 170px;
+          height: 40px;
+        }
+      }
       .sub-title {
         align-self: flex-end;
       }

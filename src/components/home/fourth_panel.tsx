@@ -5,7 +5,7 @@ export const FourthPanel: React.FC<IFourthPanel | null> = (props) => {
   if (props) {
     return (
       <div className="fourthpanel-container">
-        <div className="tri-panel tri-panel-1">
+        <div className="tri-panel subImage-section">
           <img className="mobileSubImage"
             src={props.mobileSubImage?.url}
             alt={props.mobileSubImage?.alt}

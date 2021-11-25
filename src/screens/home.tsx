@@ -11,6 +11,7 @@ import { ISecondaryPanel } from "../interface/home/ISecondaryPanel";
 import { ITop } from "../interface/home/ITop";
 import { ITriboxPanel } from "../interface/home/ITriboxPanel";
 import { FourthPanelMobile } from "../mobile/components/home/fourth_panel_mobile";
+import { SecondaryPanelMobile } from "../mobile/components/home/secondary-panel-mobile";
 import { GeneralTop } from "../services/new-top-service";
 export const Home: React.FC = () => {
   const { state, isLoading } = GeneralTop<ITop>();
@@ -32,7 +33,7 @@ export const Home: React.FC = () => {
 
   }, [])
   return (
-    <> {device}
+    <> 
       { device === 'PC' ? 
       <>
         <HeaderPanel {...constructHeaderPanelObject(state)} />
@@ -42,11 +43,11 @@ export const Home: React.FC = () => {
         <TriBoxPanel {...constructTriboxPanelObject(state)} /> 
       </>: 
         <>
-          <HeaderPanel {...constructHeaderPanelObject(state)} />
-          <SecondaryPanel {...constructSecondaryPanelObject(state)} />
-          <ProductSlider {...constructSliderArray(state)} />
+          {/* <HeaderPanel {...constructHeaderPanelObject(state)} /> */}
+          <SecondaryPanelMobile {...constructSecondaryPanelObject(state)} />
+          {/* <ProductSlider {...constructSliderArray(state)} />  */}
           <FourthPanelMobile {...constructFourthPanelObject(state)} />
-          <TriBoxPanel {...constructTriboxPanelObject(state)} /> 
+          {/* <TriBoxPanel {...constructTriboxPanelObject(state)} />  */}
         </>
       }
       

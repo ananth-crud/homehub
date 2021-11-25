@@ -17,12 +17,16 @@ export const FourthPanelMobile: React.FC<IFourthPanel | null> = (props) => {
             alt={props.circledMobileImage?.alt}
           />
         </div>
-        <div className="content">{props.whatIsHomehubContent}</div>
-        <div className="tri-panel tri-panel-1">
-          <img className="mobileSubImage"
-            src={props.mobileSubImage?.url}
-            alt={props.mobileSubImage?.alt}
-          />
+        <div className='content-section'>
+          <div className="content">
+            {props.whatIsHomehubContent}
+          </div>
+          <div className="tri-panel subImage-section">
+            <img className="mobileSubImage"
+              src={props.mobileSubImage?.url}
+              alt={props.mobileSubImage?.alt}
+            />
+          </div>
         </div>
       </div>
     );
