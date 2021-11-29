@@ -47,7 +47,7 @@ export const Home: React.FC = () => {
           <SecondaryPanelMobile {...constructSecondaryPanelObject(state)} />
           <ProductSlider {...constructSliderArray(state)} /> 
           <FourthPanelMobile {...constructFourthPanelObject(state)} />
-          {/* <TriBoxPanel {...constructTriboxPanelObject(state)} />  */}
+          <TriBoxPanel {...constructTriboxPanelObject(state)} /> 
         </>
       }
       

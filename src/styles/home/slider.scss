@@ -12,13 +12,17 @@
 }
 
 .slider-container > .slide {
-  width: 30%;
+  @include md {
+    width: 30%;    
+    padding-top: 20px;
+    margin: 10px;
+
+  }
   height: 350px;
-  padding-top: 20px;
   background-color: #f1f1f1;
-  margin: 10px;
   text-align: center;
   font-size: 30px;
+ 
 }
 
 .slide-inactive {
@@ -42,7 +46,7 @@
 }
 
 .slide-btn {
-  background: white;
+  background: #f1f1f1;
   border: 1.60911px solid #ff6b00;
   box-sizing: border-box;
   border-radius: 51.4914px;
@@ -51,29 +55,64 @@
   color: #ff6b00;
   padding: 15px;
   font-size: 11px;
+
+  @include xs {
+    background: white;
+    border: 1.60911px solid #ff6b00;
+    box-sizing: border-box;
+    border-radius: 51.4914px;
+    height: 40px;
+    line-height: 15px;
+    width: 144px;
+    color: #ff6b00;
+    padding: 15px;
+    font-size: 11px;
+  }
 }
 
 .slide-image {
   width: 150px;
   height: 160px;
+  @include xs{
+    width: 214.47px;
+    height: 236.96px;
+  }
 }
 
 .slide-label-top {
+  @include md{
+    padding-left: 20%;
+  }
   font-size: 15px;
   text-align: left;
-  padding-left: 20%;
   font-family: "Noto Sans JP";
+
+  @include xs{
+    height: 15.72px;
+    width: 196.94px;
+  }
 }
 
 .slide-label-bottom {
+  @include md{
+    padding-left: 20%;
+  }
   font-size: 15px;
   height: 35px;
   color: #ff6b00;
   text-align: left;
-  padding-left: 20%;
+  @include xs{
+    width:90.61px;
+    height: 15.93px;
+    padding-bottom: 10px;
+  }
 }
 
 .slide-top-image {
   width: 200px;
   height: 40px;
+  @include xs{
+    width: 219.07px;
+    height: 31.86px;
+  }
 }
